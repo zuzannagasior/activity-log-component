@@ -10,9 +10,9 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-interface ApolloProviderProps {
+type ApolloProviderProps = {
   children: ReactNode;
-}
+};
 
 function ApolloProvider({ children }: ApolloProviderProps) {
   return (

@@ -1,10 +1,20 @@
 import ActivityLogComponent from "./activity-log-component/ActivityLogComponent";
+import styled from "styled-components";
+
+const AppWrapper = styled.div`
+  background-color: #070707;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 function App() {
   return (
-    <div>
+    <AppWrapper>
       <ActivityLogComponent />
-    </div>
+    </AppWrapper>
   );
 }
 
