@@ -1,5 +1,5 @@
 function ActivityLogTitle() {
-  return <div></div>;
+  return <div>Activity</div>;
 }
 
 export default ActivityLogTitle;
