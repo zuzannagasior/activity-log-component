@@ -7,6 +7,11 @@ const FollowBtn = styled.button`
   border: none;
   cursor: pointer;
   color: #e9e8e7;
+  transition: background-color 0.4s;
+
+  &:hover, &:focus {
+    background-color: #8f8e90;
+  }
 `;
 
 function FollowButton() {

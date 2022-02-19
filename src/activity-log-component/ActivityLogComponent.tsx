@@ -4,8 +4,8 @@ import ActivityLogTitle from "./components/ui/ActivityLogTitle";
 
 const ActivityLogComponentWrapper = styled.div`
   background-color: #1c1c1d;
-  width: 360px;
-  height: 400px;
+  width: 400px;
+  height: calc(100% - 80px);
   border-radius: 12px;
   border: 1px solid #252626;
   overflow: hidden;

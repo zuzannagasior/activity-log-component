@@ -11,11 +11,16 @@ const ActionBtn = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 0.4s;
 
   img {
     width: 0.8rem;
     height: auto;
     filter: invert(100%);
+  }
+
+  &:hover {
+    background-color: #8f8e90;
   }
 `;
 

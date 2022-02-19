@@ -4,7 +4,7 @@ import ActivityLogEntry from "./ActivityLogEntry";
 import ActivityLogInfo from "./ActivityLogInfo";
 
 const ActivityLogEntriesWrapper = styled.div`
-  height: calc(100% - 64px);
+  height: calc(100% - 72px);
   overflow-y: scroll;
 `;
 const ActivityLogEntriesUl = styled.ul`
