@@ -8,7 +8,7 @@ const ActivityLogComponentWrapper = styled.div`
   height: 400px;
   border-radius: 12px;
   border: 1px solid #252626;
-  overflow-y: scroll;
+  overflow: hidden;
 `;
 
 function ActivityLogComponent() {
