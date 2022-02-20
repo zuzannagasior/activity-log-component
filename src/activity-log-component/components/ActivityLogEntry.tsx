@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { ActivityLogEntry as ActivityLogEntryModel } from "../models";
 import UserAvatar from "./ui/UserAvatar";
 import { useActivityLogEntryContent } from "../hooks/useActivityLogEntryContent";
-import ActivityLogEntryTime from "./ui/TimeSinceAdding";
+import TimeSinceAdding from "./ui/TimeSinceAdding";
 import { motion } from "framer-motion";
 
 type ActivityLogEntryProps = ActivityLogEntryModel;
@@ -52,7 +52,7 @@ function ActivityLogEntry(entry: ActivityLogEntryProps) {
         </ColumnWrapper>
         <ColumnWrapper textColumn>
           {entry.user.username}&nbsp;{textColumn}&nbsp;
-          <ActivityLogEntryTime date={entry.date} />
+          <TimeSinceAdding date={entry.date} />
         </ColumnWrapper>
         <ColumnWrapper>{lastColumn}</ColumnWrapper>
       </ActivityLogEntryLink>

@@ -20,7 +20,6 @@ function ActivityLogEntriesWithData() {
     variables: { first: 24 },
   });
 
-  console.log("loading ", loading, "error ", error, "data ", data);
   if (loading) {
     return <Loader />;
   }
@@ -51,18 +50,23 @@ function ActivityLogEntriesWithData() {
 
             const newActivityLogEdge =
               subscriptionData.data.activityLogEntryAdded;
-            const newEndCursor = prevEdges[prevEdges.length - 1].cursor;
             const newEdges = [newActivityLogEdge, ...prevEdges];
+
+            if (prevEdges.length < 24) {
+              return {
+                activityLog: {
+                  ...prev.activityLog,
+                  edges: newEdges,
+                },
+              };
+            }
+
             return {
               activityLog: {
-                edges:
-                  prevEdges.length < 24
-                    ? newEdges
-                    : newEdges.slice(0, prevEdges.length),
+                edges: newEdges.slice(0, prevEdges.length),
                 pageInfo: {
                   ...prev.activityLog.pageInfo,
-                  endCursor: newEndCursor,
-                  hasNextPage: true,
+                  endCursor: prevEdges[prevEdges.length - 1].cursor,
                 },
               },
             };

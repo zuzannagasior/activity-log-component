@@ -25,7 +25,6 @@ function ActivityLogEntries({
   onLoadMore,
   subscribeToNewActivityLogEntries,
 }: ActivityLogEntriesProps) {
-  console.log("edges ", edges);
   const subscribe = useRef(subscribeToNewActivityLogEntries);
 
   useEffect(() => {
