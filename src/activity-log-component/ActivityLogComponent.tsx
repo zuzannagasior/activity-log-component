@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import ActivityLogEntriesWithData from "./components/ActivityLogEntriesWithData";
 import ActivityLogTitle from "./components/ui/ActivityLogTitle";
+import { customScrollbar } from "./styles/scrollbar";
 
 const ActivityLogComponentWrapper = styled.div`
   background-color: #1c1c1d;
@@ -15,6 +16,7 @@ const ActivityLogEntriesWrapper = styled.div`
   height: calc(100% - 72px);
   overflow-y: auto;
   font-size: 0.9rem;
+  ${customScrollbar}
 `;
 
 function ActivityLogComponent() {
