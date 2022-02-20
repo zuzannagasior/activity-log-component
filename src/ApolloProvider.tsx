@@ -17,7 +17,7 @@ const httpLink = new HttpLink({
 });
 
 const wsLink = new WebSocketLink({
-  uri: "ws://activity-log-mock.herokuapp.com/graphql",
+  uri: "wss://activity-log-mock.herokuapp.com/graphql",
   options: {
     reconnect: true,
   },
