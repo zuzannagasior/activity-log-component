@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import styled from "styled-components";
 import { ActivityLogEntryEdge } from "../models";
@@ -15,14 +16,21 @@ type ActivityLogEntriesProps = {
   edges: ActivityLogEntryEdge[];
   hasMore: boolean;
   onLoadMore: () => void;
+  subscribeToNewActivityLogEntries: () => void;
 };
 
 function ActivityLogEntries({
   edges,
   hasMore,
   onLoadMore,
+  subscribeToNewActivityLogEntries,
 }: ActivityLogEntriesProps) {
   console.log("edges ", edges);
+  const subscribe = useRef(subscribeToNewActivityLogEntries);
+
+  useEffect(() => {
+    subscribe.current();
+  }, []);
 
   if (edges.length === 0) {
     return <ActivityLogInfo />;

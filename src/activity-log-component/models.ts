@@ -68,3 +68,16 @@ export type PaginatedActivityLogEntry = {
   edges: ActivityLogEntryEdge[];
   pageInfo: PageInfo;
 };
+
+export type ActivityLogData = {
+  activityLog: PaginatedActivityLogEntry;
+};
+
+export type ActivityLogVars = {
+  first: number;
+  after?: string;
+};
+
+export type ActivityLogEntryAddedData = {
+  activityLogEntryAdded: ActivityLogEntryEdge;
+};

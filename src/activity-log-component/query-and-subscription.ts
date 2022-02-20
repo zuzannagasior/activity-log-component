@@ -54,3 +54,50 @@ export const ACTIVITY_LOG = gql`
     }
   }
 `;
+
+export const ACTIVITY_LOG_ENTRY_SUBSCRIPTION = gql`
+  subscription {
+    activityLogEntryAdded {
+      cursor
+      node {
+        id
+        date
+        user {
+          id
+          username
+          avatar
+        }
+        __typename
+        ... on CollaborationActivityLogEntry {
+          cluster {
+            id
+            name
+            coverImage
+          }
+        }
+        ... on ConnectionActivityLogEntry {
+          count
+          element {
+            id
+            image
+          }
+        }
+        ... on FollowActivityLogEntry {
+          count
+          cluster {
+            id
+            name
+            coverImage
+          }
+        }
+        ... on NewClusterActivityLogEntry {
+          cluster {
+            id
+            name
+            coverImage
+          }
+        }
+      }
+    }
+  }
+`;
