@@ -1,12 +1,10 @@
+import InfiniteScroll from "react-infinite-scroll-component";
 import styled from "styled-components";
-import { PaginatedActivityLogEntry } from "../models";
+import { ActivityLogEntryEdge } from "../models";
 import ActivityLogEntry from "./ActivityLogEntry";
 import ActivityLogInfo from "./ActivityLogInfo";
+import Loader from "./ui/Loader";
 
-const ActivityLogEntriesWrapper = styled.div`
-  height: calc(100% - 72px);
-  overflow-y: scroll;
-`;
 const ActivityLogEntriesUl = styled.ul`
   list-style-type: none;
   margin: 0;
@@ -14,23 +12,35 @@ const ActivityLogEntriesUl = styled.ul`
 `;
 
 type ActivityLogEntriesProps = {
-  data: PaginatedActivityLogEntry;
+  edges: ActivityLogEntryEdge[];
+  hasMore: boolean;
+  onLoadMore: () => void;
 };
 
-function ActivityLogEntries({ data }: ActivityLogEntriesProps) {
-  const entries = data.edges;
-  console.log("entries ", entries);
-  if (entries.length === 0) {
+function ActivityLogEntries({
+  edges,
+  hasMore,
+  onLoadMore,
+}: ActivityLogEntriesProps) {
+  console.log("edges ", edges);
+
+  if (edges.length === 0) {
     return <ActivityLogInfo />;
   }
   return (
-    <ActivityLogEntriesWrapper>
-      <ActivityLogEntriesUl>
-        {entries.map((entry) => (
-          <ActivityLogEntry key={entry.cursor} {...entry.node} />
+    <ActivityLogEntriesUl>
+      <InfiniteScroll
+        dataLength={edges.length}
+        next={onLoadMore}
+        hasMore={hasMore}
+        loader={<Loader />}
+        scrollableTarget="scrollable"
+      >
+        {edges.map((edge) => (
+          <ActivityLogEntry key={edge.node.id} {...edge.node} />
         ))}
-      </ActivityLogEntriesUl>
-    </ActivityLogEntriesWrapper>
+      </InfiniteScroll>
+    </ActivityLogEntriesUl>
   );
 }
 

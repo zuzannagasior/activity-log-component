@@ -4,10 +4,19 @@ import {
   ApolloClient,
   InMemoryCache,
 } from "@apollo/client";
+import { relayStylePagination } from "@apollo/client/utilities";
 
 const client = new ApolloClient({
   uri: "https://activity-log-mock.herokuapp.com/graphql",
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache({
+    typePolicies: {
+      Query: {
+        fields: {
+          activityLog: relayStylePagination(),
+        },
+      },
+    },
+  }),
 });
 
 type ApolloProviderProps = {

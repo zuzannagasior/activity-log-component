@@ -1,17 +1,12 @@
 import styled from "styled-components";
+import { baseContentCenteredWrapper } from "../styles/shared";
 import SubText from "./ui/SubText";
 
 const ActivityLogInfoWrapper = styled.div`
-  height: calc(100% - 64px);
-  display: flex;
+  ${baseContentCenteredWrapper}
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  margin: 0 64px;
-  p {
-    font-size: 0.9rem;
-  }
+  padding: 0 64px;
 `;
 
 const NotificationIcon = styled.img`

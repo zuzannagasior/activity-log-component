@@ -52,8 +52,8 @@ export function useActivityLogEntryContent(
       textColumn: (
         <>
           <AndOthersText count={e.count} />
-          &nbsp;
-          <SubText>connected your element</SubText>
+          &nbsp;<SubText>follow</SubText>&nbsp;
+          {e.cluster.name}
         </>
       ),
       lastColumn: <Element imageUrl={e.cluster.coverImage} />,
@@ -66,7 +66,8 @@ export function useActivityLogEntryContent(
       textColumn: (
         <>
           <AndOthersText count={e.count} />
-          &nbsp;<SubText>follow</SubText>
+          &nbsp;
+          <SubText>connected your element</SubText>
         </>
       ),
       lastColumn: <Element imageUrl={e.element.image} />,

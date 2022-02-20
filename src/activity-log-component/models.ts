@@ -59,7 +59,7 @@ export interface NewClusterActivityLogEntry extends ActivityLogEntry {
   cluster: Cluster;
 }
 
-type ActivityLogEntryEdge = {
+export type ActivityLogEntryEdge = {
   cursor: string;
   node: ActivityLogEntry;
 };
