@@ -3,10 +3,11 @@ import { ActivityLogEntry as ActivityLogEntryModel } from "../models";
 import UserAvatar from "./ui/UserAvatar";
 import { useActivityLogEntryContent } from "../hooks/useActivityLogEntryContent";
 import ActivityLogEntryTime from "./ui/TimeSinceAdding";
+import { motion } from "framer-motion";
 
 type ActivityLogEntryProps = ActivityLogEntryModel;
 
-const ActivityLogEntryWrapper = styled.li`
+const ActivityLogEntryWrapper = styled(motion.li)`
   height: 72px;
   border-bottom: 1px solid #252626;
   &:last-child {
@@ -24,6 +25,7 @@ const ActivityLogEntryLink = styled.a`
   font-size: 0.8rem;
   line-height: 1.2rem;
   color: #e9e8e7;
+  background-color: #1c1c1d;
   transition: background-color 0.4s;
   &:hover,
   &:focus {
@@ -43,7 +45,7 @@ function ActivityLogEntry(entry: ActivityLogEntryProps) {
   const { textColumn, lastColumn } = useActivityLogEntryContent(entry);
 
   return (
-    <ActivityLogEntryWrapper>
+    <ActivityLogEntryWrapper layout>
       <ActivityLogEntryLink href="#">
         <ColumnWrapper>
           <UserAvatar imageUrl={entry.user.avatar} />
