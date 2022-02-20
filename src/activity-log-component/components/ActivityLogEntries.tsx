@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import styled from "styled-components";
 import { ActivityLogEntryEdge } from "../models";
-import ActivityLogEntry from "./ActivityLogEntry";
+import ActivityLogEntry from "./activity-log-entry/ActivityLogEntry";
 import ActivityLogInfo from "./ActivityLogInfo";
 import Loader from "./ui/Loader";
 

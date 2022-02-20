@@ -1,16 +1,16 @@
 import { ReactNode } from "react";
-import ActionButton from "../components/ui/ActionButton";
-import FollowButton from "../components/ui/FollowButton";
-import Element from "../components/ui/Element";
+import ActionButton from "../ui/ActionButton";
+import FollowButton from "../ui/FollowButton";
+import Element from "../ui/Element";
 import {
   ActivityLogEntry,
   CollaborationActivityLogEntry,
   ConnectionActivityLogEntry,
   FollowActivityLogEntry,
   NewClusterActivityLogEntry,
-} from "../models";
-import SubText from "../components/ui/SubText";
-import AndOthersText from "../components/ui/AndOthers";
+} from "../../models";
+import SubText from "../ui/SubText";
+import AndOthersText from "./AndOthers";
 
 type ActivityLogEntryContent = {
   textColumn: ReactNode;

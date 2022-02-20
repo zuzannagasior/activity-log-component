@@ -1,4 +1,4 @@
-import SubText from "./SubText";
+import SubText from "../ui/SubText";
 
 type AndOthersTextProps = {
   count: number;

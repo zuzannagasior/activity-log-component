@@ -3,14 +3,14 @@ import {
   ActivityLogData,
   ActivityLogEntryAddedData,
   ActivityLogVars,
-} from "../models";
+} from "./models";
 import {
   ACTIVITY_LOG,
   ACTIVITY_LOG_ENTRY_SUBSCRIPTION,
-} from "../query-and-subscription";
-import ActivityLogEntries from "./ActivityLogEntries";
-import ErrorMessage from "./ui/ErrorMessage";
-import Loader from "./ui/Loader";
+} from "./query-and-subscription";
+import ActivityLogEntries from "./components/ActivityLogEntries";
+import ErrorMessage from "./components/ui/ErrorMessage";
+import Loader from "./components/ui/Loader";
 
 function ActivityLogEntriesWithData() {
   const { loading, error, data, fetchMore, subscribeToMore } = useQuery<

@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { ActivityLogEntry as ActivityLogEntryModel } from "../models";
-import UserAvatar from "./ui/UserAvatar";
-import { useActivityLogEntryContent } from "../hooks/useActivityLogEntryContent";
-import TimeSinceAdding from "./ui/TimeSinceAdding";
+import { ActivityLogEntry as ActivityLogEntryModel } from "../../models";
+import UserAvatar from "../ui/UserAvatar";
+import { useActivityLogEntryContent } from "./useActivityLogEntryContent";
+import TimeSinceAdding from "./TimeSinceAdding";
 import { motion } from "framer-motion";
-import { baseActivityLogEntryListItem } from "../styles/shared";
+import { baseActivityLogEntryListItem } from "../../styles/shared";
 
 type ActivityLogEntryProps = ActivityLogEntryModel;
 

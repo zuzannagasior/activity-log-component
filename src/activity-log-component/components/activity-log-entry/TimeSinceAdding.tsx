@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import SubText from "./SubText";
+import SubText from "../ui/SubText";
 import { DateTime, Interval } from "luxon";
 
 DateTime.now()

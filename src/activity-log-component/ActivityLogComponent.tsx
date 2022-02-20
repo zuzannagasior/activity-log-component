@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ActivityLogEntriesWithData from "./components/ActivityLogEntriesWithData";
+import ActivityLogEntriesWithData from "./ActivityLogEntriesWithData";
 import ActivityLogTitle from "./components/ui/ActivityLogTitle";
 import { customScrollbar } from "./styles/scrollbar";
 
