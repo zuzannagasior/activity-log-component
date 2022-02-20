@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { ActivityLogEntry as ActivityLogEntryModel } from "../models";
 import UserAvatar from "./ui/UserAvatar";
 import { useActivityLogEntryContent } from "../hooks/useActivityLogEntryContent";
-import ActivityLogEntryTime from "./ui/ActivityLogEntryTime";
+import ActivityLogEntryTime from "./ui/TimeSinceAdding";
 
 type ActivityLogEntryProps = ActivityLogEntryModel;
 
