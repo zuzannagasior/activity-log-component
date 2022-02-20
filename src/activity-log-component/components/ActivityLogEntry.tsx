@@ -4,12 +4,12 @@ import UserAvatar from "./ui/UserAvatar";
 import { useActivityLogEntryContent } from "../hooks/useActivityLogEntryContent";
 import TimeSinceAdding from "./ui/TimeSinceAdding";
 import { motion } from "framer-motion";
+import { baseActivityLogEntryListItem } from "../styles/shared";
 
 type ActivityLogEntryProps = ActivityLogEntryModel;
 
 const ActivityLogEntryWrapper = styled(motion.li)`
-  height: 72px;
-  border-bottom: 1px solid #252626;
+  ${baseActivityLogEntryListItem}
   &:last-child {
     border-bottom: none;
   }

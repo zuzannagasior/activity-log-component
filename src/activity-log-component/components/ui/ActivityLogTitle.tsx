@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import {
+  baseActivityLogEntryListItem,
+  centerContent,
+} from "../../styles/shared";
 
 const ActivityLogTitleWrapper = styled.div`
-  height: 72px;
-  border-bottom: 1px solid #252626;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${baseActivityLogEntryListItem};
+  ${centerContent};
   font-size: 1.5rem;
   font-family: "Playfair Display", serif;
 `;

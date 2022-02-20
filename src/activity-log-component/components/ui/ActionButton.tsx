@@ -1,26 +1,20 @@
 import styled from "styled-components";
+import {
+  baseButton,
+  centerContent,
+  baseActivityLogEntryItemShape,
+} from "../../styles/shared";
 
 const ActionBtn = styled.button`
-  width: 40px;
-  height: 40px;
-  background-color: #787779;
-  border-radius: 6px;
+  ${baseButton};
+  ${centerContent};
+  ${baseActivityLogEntryItemShape};
   padding: 0px;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 0.4s;
 
   img {
     width: 0.8rem;
     height: auto;
     filter: invert(100%);
-  }
-
-  &:hover {
-    background-color: #8f8e90;
   }
 `;
 
